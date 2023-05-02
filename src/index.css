@@ -1,0 +1,29 @@
+@tailwind base;
+@tailwind components;
+
+/* react-tabs */
+.react-tabs {
+}
+
+.react-tabs__tab-list {
+}
+.react-tabs__tab {
+	clip-path: polygon(45% 0, 100% 0, 100% 100%, 0 100%, 0 45%);
+	@apply flex justify-center items-center bg-main-blue w-auto p-4 h-10 cursor-pointer select-none transition duration-300 ease-out;
+}
+
+.react-tabs__tab--selected {
+	@apply border-none outline-none bg-main-blue-selected cursor-default ease-in duration-300;
+}
+.react-tabs__tab--disabled {
+}
+
+.react-tabs__tab-panel {
+	@apply hidden h-full w-full border-separate shadow-xl border-2 border-main-blue-selected;
+}
+
+.react-tabs__tab-panel--selected {
+	@apply block;
+}
+
+@tailwind utilities;
