@@ -1,5 +1,6 @@
 import { useState } from "react";
 import { Tabs, TabList, Tab, TabPanel } from "react-tabs";
+import InfoSystems from "./InfoSystems";
 
 const ListOfTabs = () => {
 	const [tabIndex, setTabIndex] = useState(0);
@@ -27,9 +28,7 @@ const ListOfTabs = () => {
 					<Tab>Конфигурации</Tab>
 				</TabList>
 				<TabPanel>
-					<div>
-						assdffffffffffffffffffffffffffffffffffffffffffffffffffffd
-					</div>
+					<InfoSystems />
 				</TabPanel>
 				<TabPanel>
 					<div>zxc</div>
