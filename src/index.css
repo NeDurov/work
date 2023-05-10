@@ -26,4 +26,8 @@
 	@apply block;
 }
 
+body {
+	overflow: scroll;
+}
+
 @tailwind utilities;

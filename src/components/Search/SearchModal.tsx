@@ -13,7 +13,7 @@ const SearchModal = ({
 	const [filter, setFilter] = useState<(typeof data)[0]>({ shortName: "" });
 
 	const [filterData, setFilterData] = useState(data || []);
-	const [keys, setKeys] = useState<Array<string>>(Object.keys(data[0]));
+	const [keys, _] = useState<Array<string>>(Object.keys(data[0]));
 	const handleOpen = () => setOpen(true);
 	const handleClose = () => setOpen(false);
 
@@ -50,7 +50,7 @@ const SearchModal = ({
 				value={item}
 			/>
 			<Modal open={open} onClose={handleClose}>
-				<div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-8/12 bg-white rounded shadow-lg p-4">
+				<div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-8/12 bg-white rounded shadow-lg p-4 h-3/6 overflow-y-scroll overflow-x-hidden">
 					<div className="flex flex-row items-center justify-around">
 						{keys.map((key, i) => {
 							return (

@@ -5,7 +5,10 @@ import RegistrationAndAdministration from "./components/RegistrationAndAdministr
 
 function App() {
 	return (
-		<div className="max-w-full grid grid-cols-3 grid-rows-2 gap-8 m-8">
+		<div
+			className="max-w-full grid grid-cols-3 grid-rows-2 gap-8 m-8 "
+			style={{ gridTemplateRows: "auto 1fr" }}
+		>
 			<MainParams />
 
 			<Optional />

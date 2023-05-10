@@ -1,4 +1,11 @@
-import Select from "react-select";
+import SelectData from "./SelectData";
+
+const dataForSelect = [
+	{ value: "В", label: "Иван" },
+	{ value: "П", label: "Павел" },
+	{ value: "А", label: "Александр" },
+	{ value: "М", label: "Михаил" },
+];
 
 const RegistrationAndAdministration = () => {
 	return (
@@ -69,7 +76,7 @@ const RegistrationAndAdministration = () => {
 						id="owner"
 						className="border border-gray-300 p-2 rounded w-full col-span-2"
 					/> */}
-					<Select
+					{/* <Select
 						className="col-span-2"
 						placeholder="Владелец"
 						isClearable
@@ -98,6 +105,12 @@ const RegistrationAndAdministration = () => {
 								};
 							},
 						}}
+					/> */}
+					<SelectData
+						className={"col-span-2"}
+						placeholder={"Владелец"}
+						name={"units-of-measurement"}
+						data={dataForSelect}
 					/>
 				</div>
 			</div>

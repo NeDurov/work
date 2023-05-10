@@ -22,15 +22,15 @@ const data = {
 	formula: "XXX",
 	from: "XXX",
 	to: "XXX",
-	unitsOfMeasurement: "",
+	unitsOfMeasurement: "XXX",
 };
 
 const arr = Array(10).fill(data);
 
 const InfoSystems = () => {
 	return (
-		<TableContainer component={Paper}>
-			<Table sx={{ minWidth: 650 }} aria-label="caption table">
+		<TableContainer className="overflow-y-scroll overflow-x-hidden h-full">
+			<Table aria-label="caption table">
 				<TableHead>
 					<TableRow>
 						<TableCell align="right">Тип инфосистемы</TableCell>

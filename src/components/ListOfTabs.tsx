@@ -1,12 +1,12 @@
 import { useState } from "react";
 import { Tabs, TabList, Tab, TabPanel } from "react-tabs";
-import InfoSystems from "./InfoSystems";
+import InfoSystems from "./Tabs/InfoSystems";
 
 const ListOfTabs = () => {
 	const [tabIndex, setTabIndex] = useState(0);
 
 	return (
-		<div className="row-start-2 col-span-3 ">
+		<div className="row-start-2 col-span-3 align-top">
 			<Tabs
 				className="w-full h-full"
 				selectedIndex={tabIndex}

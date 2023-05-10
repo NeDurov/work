@@ -25,11 +25,27 @@ const data = [
 		id: "IND005",
 		shortName: "Норматив КВ в НПС_электроснабжение",
 	},
+	{
+		id: "IND005",
+		shortName: "Норматив КВ в НПС_электроснабжение",
+	},
+	{
+		id: "IND005",
+		shortName: "Норматив КВ в НПС_электроснабжение",
+	},
+	{
+		id: "IND005",
+		shortName: "Норматив КВ в НПС_электроснабжение",
+	},
+	{
+		id: "IND005",
+		shortName: "Норматив КВ в НПС_электроснабжение",
+	},
 ];
 
 const MainParams = () => {
 	return (
-		<div className="border-4 border-main-blue rounded">
+		<div className="border-4  overflow-hidden border-main-blue rounded">
 			<h2 className="text-lg font-bold  p-0.5 bg-main-blue">
 				Основные параметры
 			</h2>
