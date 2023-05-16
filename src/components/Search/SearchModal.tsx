@@ -25,7 +25,8 @@ const SearchModal = ({
 
 	useEffect(() => {
 		Object.keys(filter).forEach((key, i) => {
-			if (i === 0) setFilterData(data);
+			console.log(key, i);
+			// if (i === 0) setFilterData(data);
 
 			if (filter[key] !== "") {
 				setFilterData((oldFilterData) =>
@@ -38,6 +39,7 @@ const SearchModal = ({
 		});
 	}, [filter]);
 
+	//!!!!!!!!!!!!!! FIX EACH FILTER
 	return (
 		<div className="col-span-2">
 			<input

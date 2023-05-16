@@ -5,8 +5,8 @@ import {
 	TableContainer,
 	TableHead,
 	TableRow,
-	Paper,
 } from "@mui/material";
+import Row from "./Row";
 
 const data = {
 	type: "XXX",
@@ -33,6 +33,7 @@ const InfoSystems = () => {
 			<Table aria-label="caption table">
 				<TableHead>
 					<TableRow>
+						<TableCell />
 						<TableCell align="right">Тип инфосистемы</TableCell>
 						<TableCell align="right">Инфосистема</TableCell>
 						<TableCell align="right">Диспетчерское имя</TableCell>
@@ -54,31 +55,8 @@ const InfoSystems = () => {
 					</TableRow>
 				</TableHead>
 				<TableBody>
-					{arr.map((row) => (
-						<TableRow key={row.infoSystem}>
-							<TableCell align="right">{row.type}</TableCell>
-							<TableCell align="right">
-								{row.infoSystem}
-							</TableCell>
-							<TableCell align="right">{row.dispName}</TableCell>
-							<TableCell align="right">{row.plan}</TableCell>
-							<TableCell align="right">{row.planPer}</TableCell>
-							<TableCell align="right">
-								{row.pervoistochnikForPlan}
-							</TableCell>
-							<TableCell align="right">{row.fact}</TableCell>
-							<TableCell align="right">{row.factPer}</TableCell>
-							<TableCell align="right">
-								{row.pervoistochnikForFact}
-							</TableCell>
-							<TableCell align="right">{row.variant}</TableCell>
-							<TableCell align="right">{row.formula}</TableCell>
-							<TableCell align="right">{row.from}</TableCell>
-							<TableCell align="right">{row.to}</TableCell>
-							<TableCell align="right">
-								{row.unitsOfMeasurement}
-							</TableCell>
-						</TableRow>
+					{arr.map((row, i) => (
+						<Row key={i} rowData={row} />
 					))}
 				</TableBody>
 			</Table>

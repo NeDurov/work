@@ -1,6 +1,6 @@
 import { useState } from "react";
 import { Tabs, TabList, Tab, TabPanel } from "react-tabs";
-import InfoSystems from "./Tabs/InfoSystems";
+import InfoSystems from "./Tabs/infoSystems/InfoSystems";
 
 const ListOfTabs = () => {
 	const [tabIndex, setTabIndex] = useState(0);
