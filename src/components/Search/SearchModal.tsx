@@ -3,11 +3,14 @@ import Modal from "@mui/material/Modal";
 import SearchTable from "./SearchTable";
 import translateKeys from "../../utils/translateKeys";
 
+let count = 0;
+
 const SearchModal = ({
 	data,
 }: {
 	data: Array<{ shortName: string; [key: string]: string }>;
 }) => {
+	console.log(count++);
 	const [item, setItem] = useState("");
 	const [open, setOpen] = useState(false);
 	const [filter, setFilter] = useState<(typeof data)[0]>({ shortName: "" });
@@ -18,28 +21,26 @@ const SearchModal = ({
 	const handleClose = () => setOpen(false);
 
 	const handleChange = (e: React.ChangeEvent<HTMLInputElement>) => {
-		const key = e.target.name;
-		const value = e.target.value;
-		setFilter((oldFilter) => ({ ...oldFilter, [key]: value }));
+		const { name, value } = e.target;
+		if (value === "") setFilterData(data);
+		setFilter((oldFilter) => ({ ...oldFilter, [name]: value }));
 	};
 
-	useEffect(() => {
-		Object.keys(filter).forEach((key, i) => {
-			console.log(key, i);
-			// if (i === 0) setFilterData(data);
+	useEffect(() => setFilterData(data), [open]);
 
-			if (filter[key] !== "") {
-				setFilterData((oldFilterData) =>
-					oldFilterData.filter((el) => el[key].includes(filter[key]))
-				);
-			}
-			if (filter[key] === "") {
-				setFilterData((oldData) => [...oldData]);
-			}
-		});
+	useEffect(() => {
+		let filteredData = data;
+
+		for (const key in filter) {
+			if (filter[key] === "") continue;
+
+			filteredData = filteredData.filter((item, i, arr) =>
+				item[key].includes(filter[key])
+			);
+		}
+		setFilterData(filteredData);
 	}, [filter]);
 
-	//!!!!!!!!!!!!!! FIX EACH FILTER
 	return (
 		<div className="col-span-2">
 			<input
