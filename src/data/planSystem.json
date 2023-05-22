@@ -1,0 +1,31 @@
+{
+	"dataForPlanSystem": [
+		{
+			"shortName": "Change Request Management"
+		},
+		{
+			"shortName": "ERP 2005"
+		},
+		{
+			"shortName": "IDM"
+		},
+		{
+			"shortName": "PPM"
+		},
+		{
+			"shortName": "RWD"
+		},
+		{
+			"shortName": "SAP ECC 6.0 IS-Oil&Gas"
+		},
+		{
+			"shortName": "SAP ECC 6.0 IS-U"
+		},
+		{
+			"shortName": "SAP R/3"
+		},
+		{
+			"shortName": "Service Desk"
+		}
+	]
+}

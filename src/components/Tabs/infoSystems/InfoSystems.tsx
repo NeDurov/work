@@ -37,7 +37,9 @@ const InfoSystems = () => {
 						<TableCell align="right">Тип инфосистемы</TableCell>
 						<TableCell align="right">Инфосистема</TableCell>
 						<TableCell align="right">Диспетчерское имя</TableCell>
-						<TableCell align="right">План</TableCell>
+						<TableCell align="center" padding="none">
+							План
+						</TableCell>
 						<TableCell align="right">Период</TableCell>
 						<TableCell align="right">
 							Система первоисточник для плана
@@ -49,8 +51,8 @@ const InfoSystems = () => {
 						</TableCell>
 						<TableCell align="right">Вариант расчета</TableCell>
 						<TableCell align="right">Формула</TableCell>
-						<TableCell align="right">С</TableCell>
-						<TableCell align="right">По</TableCell>
+						<TableCell align="center">С</TableCell>
+						<TableCell align="center">По</TableCell>
 						<TableCell align="right">Ед. изм.</TableCell>
 					</TableRow>
 				</TableHead>

@@ -3,14 +3,11 @@ import Modal from "@mui/material/Modal";
 import SearchTable from "./SearchTable";
 import translateKeys from "../../utils/translateKeys";
 
-let count = 0;
-
 const SearchModal = ({
 	data,
 }: {
 	data: Array<{ shortName: string; [key: string]: string }>;
 }) => {
-	console.log(count++);
 	const [item, setItem] = useState("");
 	const [open, setOpen] = useState(false);
 	const [filter, setFilter] = useState<(typeof data)[0]>({ shortName: "" });
@@ -42,7 +39,7 @@ const SearchModal = ({
 	}, [filter]);
 
 	return (
-		<div className="col-span-2">
+		<>
 			<input
 				readOnly
 				onClick={handleOpen}
@@ -56,7 +53,9 @@ const SearchModal = ({
 				<div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-8/12 bg-white rounded shadow-lg p-4 h-3/6 overflow-y-scroll overflow-x-hidden">
 					<div className="flex flex-row items-center justify-around">
 						{keys.map((key, i) => {
-							return (
+							return key === "name" ? (
+								""
+							) : (
 								<div key={i}>
 									<label
 										htmlFor={key}
@@ -82,7 +81,7 @@ const SearchModal = ({
 					/>
 				</div>
 			</Modal>
-		</div>
+		</>
 	);
 };
 

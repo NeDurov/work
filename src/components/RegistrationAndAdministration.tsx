@@ -1,13 +1,11 @@
 import SelectData from "./SelectData";
 
-const dataForSelect = [
-	{ value: "В", label: "Иван" },
-	{ value: "П", label: "Павел" },
-	{ value: "А", label: "Александр" },
-	{ value: "М", label: "Михаил" },
-];
+import { dataForSelect } from "../data/ownerData.json";
+import { useState } from "react";
 
 const RegistrationAndAdministration = () => {
+	const [owner, setOwner] = useState("");
+
 	return (
 		<div className="border-4 border-main-blue rounded">
 			<h2 className="text-lg font-bold  p-0.5 bg-main-blue">
@@ -109,8 +107,10 @@ const RegistrationAndAdministration = () => {
 					<SelectData
 						className={"col-span-2"}
 						placeholder={"Владелец"}
-						name={"units-of-measurement"}
+						name={"owner"}
 						data={dataForSelect}
+						value={owner}
+						changeValue={setOwner}
 					/>
 				</div>
 			</div>

@@ -1,47 +1,49 @@
 import SearchModal from "./Search/SearchModal";
 
-const data = [
-	{
-		id: "IND000",
-		shortName: "Объем учетной добычи нефти",
-	},
-	{
-		id: "IND001",
-		shortName: "Эксплуатационные затраты на добычу газа",
-	},
-	{
-		id: "IND002",
-		shortName: "Объем вал нефти и газа",
-	},
-	{
-		id: "IND003",
-		shortName: "Норматив КВ в НПС_автодороги",
-	},
-	{
-		id: "IND004",
-		shortName: "Норматив КВ в НПС_телемеханика и связь",
-	},
-	{
-		id: "IND006",
-		shortName: "Норматив КВ в НПС_электроснабжение",
-	},
-	{
-		id: "IND007",
-		shortName: "Норматив КВ в НПС_электроснабжение",
-	},
-	{
-		id: "IND008",
-		shortName: "Норматив КВ в НПС_электроснабжение",
-	},
-	{
-		id: "IND009",
-		shortName: "Норматив КВ в НПС_электроснабжение",
-	},
-	{
-		id: "IND010",
-		shortName: "Норматив КВ в НПС_электроснабжение",
-	},
-];
+import { unitsData } from "../data/unitsData.json";
+
+// const data = [
+// 	{
+// 		id: "IND000",
+// 		shortName: "Объем учетной добычи нефти",
+// 	},
+// 	{
+// 		id: "IND001",
+// 		shortName: "Эксплуатационные затраты на добычу газа",
+// 	},
+// 	{
+// 		id: "IND002",
+// 		shortName: "Объем вал нефти и газа",
+// 	},
+// 	{
+// 		id: "IND003",
+// 		shortName: "Норматив КВ в НПС_автодороги",
+// 	},
+// 	{
+// 		id: "IND004",
+// 		shortName: "Норматив КВ в НПС_телемеханика и связь",
+// 	},
+// 	{
+// 		id: "IND006",
+// 		shortName: "Норматив КВ в НПС_электроснабжение",
+// 	},
+// 	{
+// 		id: "IND007",
+// 		shortName: "Норматив КВ в НПС_электроснабжение",
+// 	},
+// 	{
+// 		id: "IND008",
+// 		shortName: "Норматив КВ в НПС_электроснабжение",
+// 	},
+// 	{
+// 		id: "IND009",
+// 		shortName: "Норматив КВ в НПС_электроснабжение",
+// 	},
+// 	{
+// 		id: "IND010",
+// 		shortName: "Норматив КВ в НПС_электроснабжение",
+// 	},
+// ];
 
 const MainParams = () => {
 	return (
@@ -111,7 +113,9 @@ const MainParams = () => {
 					>
 						Ед. изм:
 					</label>
-					<SearchModal data={data} />
+					<div className="col-span-2">
+						<SearchModal data={unitsData} />
+					</div>
 				</div>
 				<div className="grid gap-4 items-center grid-cols-3">
 					<label className="text-right" htmlFor="paired-indicator">
