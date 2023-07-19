@@ -1,7 +1,20 @@
 import { useEffect, useState } from "react";
 import Modal from "@mui/material/Modal";
-import SearchTable from "./SearchTable";
+import SearchTable from "./components/SearchTable";
+import Input from "@core/Input";
+import { Box, Divider, Stack, styled, Typography } from "@mui/material";
 import translateKeys from "../../utils/translateKeys";
+
+const BoxContainer = styled(Box)({
+	position: "absolute",
+	top: "50%",
+	left: "50%",
+	transform: "translate(-50%, -50%)",
+	backgroundColor: "white",
+	maxHeight: "50vh",
+	overflow: "hidden",
+	padding: 10,
+});
 
 const SearchModal = ({
 	data,
@@ -40,46 +53,62 @@ const SearchModal = ({
 
 	return (
 		<>
-			<input
-				readOnly
+			<Input
+				fullWidth
+				size="small"
+				InputProps={{
+					readOnly: true,
+				}}
 				onClick={handleOpen}
-				type="text"
-				id="unit"
-				name="unit"
-				className="w-full p-2 border border-gray-300 rounded"
 				value={item}
 			/>
-			<Modal open={open} onClose={handleClose}>
-				<div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-8/12 bg-white rounded shadow-lg p-4 h-3/6 overflow-y-scroll overflow-x-hidden">
-					<div className="flex flex-row items-center justify-around">
+			<Modal
+				open={open}
+				onClose={handleClose}
+				aria-labelledby="modal-header"
+				aria-describedby="modal-description"
+			>
+				<BoxContainer>
+					<Stack
+						direction={"row"}
+						spacing={2}
+						divider={<Divider orientation="vertical" flexItem />}
+						id="modal-header"
+					>
 						{keys.map((key, i) => {
 							return key === "name" ? (
 								""
 							) : (
-								<div key={i}>
-									<label
-										htmlFor={key}
-									>{`Поиск по полю "${translateKeys(
-										key
-									)}": `}</label>
-									<input
+								<Stack
+									key={i}
+									direction={"row"}
+									alignItems={"center"}
+									spacing={1}
+								>
+									<Typography
+										overflow={"visible"}
+										noWrap
+										variant="body2"
+									>
+										{translateKeys(key)}
+									</Typography>
+									<Input
+										size="small"
 										type="text"
-										id={key}
-										name={key}
-										className="border border-gray-300 p-2 rounded"
 										onChange={handleChange}
 									/>
-								</div>
+								</Stack>
 							);
 						})}
-					</div>
+					</Stack>
 					<SearchTable
+						id="modal-description"
 						keys={keys}
 						data={filterData || []}
 						selectEl={setItem}
 						closeModal={setOpen}
 					/>
-				</div>
+				</BoxContainer>
 			</Modal>
 		</>
 	);

@@ -6,7 +6,7 @@ import {
 	TableHead,
 	TableRow,
 } from "@mui/material";
-import Row from "./Row";
+import Row from "./components/Row";
 
 const data = {
 	type: "XXX",
@@ -29,7 +29,7 @@ const arr = Array(10).fill(data);
 
 const InfoSystems = () => {
 	return (
-		<TableContainer className="overflow-y-scroll overflow-x-hidden h-full">
+		<TableContainer>
 			<Table aria-label="caption table">
 				<TableHead>
 					<TableRow>
@@ -37,23 +37,21 @@ const InfoSystems = () => {
 						<TableCell align="right">Тип инфосистемы</TableCell>
 						<TableCell align="right">Инфосистема</TableCell>
 						<TableCell align="right">Диспетчерское имя</TableCell>
-						<TableCell align="center" padding="none">
-							План
-						</TableCell>
-						<TableCell align="right">Период</TableCell>
+						<TableCell align="center">План</TableCell>
+						<TableCell align="center">Период</TableCell>
 						<TableCell align="right">
 							Система первоисточник для плана
 						</TableCell>
-						<TableCell align="right">Факт</TableCell>
-						<TableCell align="right">Период</TableCell>
+						<TableCell align="center">Факт</TableCell>
+						<TableCell align="center">Период</TableCell>
 						<TableCell align="right">
 							Система первоисточник для факта
 						</TableCell>
 						<TableCell align="right">Вариант расчета</TableCell>
-						<TableCell align="right">Формула</TableCell>
+						<TableCell align="center">Формула</TableCell>
 						<TableCell align="center">С</TableCell>
 						<TableCell align="center">По</TableCell>
-						<TableCell align="right">Ед. изм.</TableCell>
+						<TableCell align="center">Ед. изм.</TableCell>
 					</TableRow>
 				</TableHead>
 				<TableBody>

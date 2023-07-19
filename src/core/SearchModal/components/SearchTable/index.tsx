@@ -6,29 +6,42 @@ import {
 	TableHead,
 	TableRow,
 	Paper,
+	styled,
 } from "@mui/material";
-import { Dispatch, SetStateAction, useState } from "react";
-import translateKeys from "../../utils/translateKeys";
+import { Dispatch, SetStateAction } from "react";
+import translateKeys from "../../../../utils/translateKeys";
 
 const SearchTable = ({
 	keys,
 	data,
 	selectEl,
 	closeModal,
+	id,
 }: {
 	keys: Array<string>;
 	data: Array<{ shortName: string; [key: string]: string }>;
 	selectEl: Dispatch<SetStateAction<string>>;
 	closeModal: Dispatch<SetStateAction<boolean>>;
+	id: string;
 }) => {
 	const handleClick = (shortName: string) => {
 		selectEl(shortName);
 		closeModal(false);
 	};
 
+	const TableContainerWithMargin = styled(TableContainer)({
+		marginTop: 5,
+		maxHeight: "45vh",
+		overflowY: "scroll",
+	});
+
+	const TableBodyWithScroll = styled(TableBody)({
+		overflowY: "scroll",
+	});
+
 	return (
-		<TableContainer className="mt-2" component={Paper}>
-			<Table>
+		<TableContainerWithMargin id={id}>
+			<Table stickyHeader>
 				<TableHead>
 					<TableRow>
 						{keys.map((cell, i) => (
@@ -57,7 +70,7 @@ const SearchTable = ({
 					})}
 				</TableBody>
 			</Table>
-		</TableContainer>
+		</TableContainerWithMargin>
 	);
 };
 
